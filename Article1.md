@@ -103,7 +103,7 @@ In fact, the remaining steps are very straightforward and similar with other dep
 
 ## Facts and Lessons Learned
 
-This is a successful international collaboration which benefits both NTT and ZJU-CST a lot. ZJU-CST have learnt the strict work style and devoted work attitude from NTT and released a more robust BOSH which is compatible with Cloud Foundry V2. NTT appriciates ZJU-CST for their huge effort to build up a CPI runnable on various CloudStack environements. The most precious assets we get from this cooperation maybe the experience in how to perform international cooperation effectively and how to reach out to the community if help is needed.
+This is a successful international collaboration which benefits both NTT and ZJU-CST a lot. With the help from NTT, ZJU-CST is able to release an upgraded CPI which supports Cloud Foundry V2 and CloudStack 4.0/4.2. NTT appriciates ZJU-CST for their huge effort to build up a CPI runnable on various CloudStack environements. The most precious assets we get from this cooperation maybe the experience in how to perform international cooperation effectively and how to reach out to the community if help is needed.
 
 ## Join Us
 
