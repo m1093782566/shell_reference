@@ -5,17 +5,20 @@ CloudStack is an open source IaaS which is used by a number of service providers
 
 This work is powered by ZJU-CST and NTT, we have been working together since last November. Thanks to NTT team member [@yudai](https://twitter.com/i_yudai) and ZJU-CST team member [@zhang](https://github.com/resouer), the main contributors of this project, who had devoted much of their energies to fixing issues and rising to challenges on the CPI work. In addtion, we would like to appreciate the selfless help received from Pivotal Cloud team and [Nic Williams](http://drnicwilliams.com/).
 
-##Why ZJU-SEL and NTT?
-[ZJU-SEL](https://github.com/ZJU-SEL), the biggest software engineering team of Zhejiang University as well as the leading Cloud Computing research institute in China. ZJU-SEL developed BOSH CloudStack CPI for Cloud Foundry `V1` last May, and introduced the CPI work at [Cloud Foundry Conference](http://www.platformcf.com/) in Santa Clara, California last September. ZJU-SEL already had experience running CloudStack advanced zone, and more recently launched a comprehensive PaaS platform based on Cloud Foundry `V1` serving city administrators of HangZhou.
+##Why ZJU-CST and NTT?
+[ZJU-CST](https://github.com/ZJU-SEL) is the biggest software engineering team of Zhejiang University as well as the leading Cloud Computing research institute in China. ZJU-CST started R&D work on Cloud Foundry and CloudStack about 3 years ago, and more recently launched a comprehensive PaaS platform based on Cloud Foundry `V1` serving City Management Department of Hangzhou China. ZJU-CST released BOSH CloudStack CPI for Cloud Foundry V1 last May, and introduced the CPI work at PlatformCF 2013 in Santa Clara, California last September.
 
 [NTT, the world's leading telecom, has been active in fostering the Cloud Foundry developer and user community in Japan. NTT lab contributes Nise BOSH - a lightweight BOSH emulator for locally compiling, releasing and testing services to Cloud Foundry last April].(more infromations or update?)
 
-The decision to work together was motivated in part because ZJU-SEL intended to move towards Cloud Foundry `V2` and NTT wanted to improve their CPI project so that can be compatible with CloudStack advanced zone(any update?). Vice dean at Software College of Zhejiang University Yang Xiaohu thought highly of this collaboration. "It will be a win-win cooperation, which will build a international platform for learning and working together," Yang said. "I am confident that both sides will benefit much from this project and get all that they want".
+The decision to work together was motivated in part because ZJU-CST intended to upgrade the CPI  to support Cloud Foundry V2 and NTT wanted to improve their independently developed BOSH CloudStack CPI project so that can be compatible with CloudStack advanced zone. 
 
-##How ZJU-SEL and NTT Collaborate?
-Since ZJU-SEL and NTT developed BOSH CloudStack CPI indepently at the very start, there are many differences in the implmentations between ZJU-SEL and NTT. Hence, the first step is to merge code repositories of ZJU-SEL and NTT into a new repository. We chose to create a new [repository](https://github.com/cloudfoundry-community/bosh-cloudstack-cpi) in github [cloudfoundry-community](https://github.com/cloudfoundry-community/) in order to encourage more developers to join us. Fortunately, we all used [Git](https://github.com/) to maintain our codes, thus, it helped save lots of time for us. However, merging and solving conflicts is not a easy task.
+Xiaohu Yang, Vice dean of College of Software Technology, Zhejiang University, thought highly of this international collaboration. "It will be a win-win cooperation, open source projects such as Cloud Foundry can serve as an international platform for education and researching".
 
-There are some crucial aspects in the process of refactoring CPI(check out the [wiki](https://github.com/cloudfoundry-community/bosh-cloudstack-cpi/wiki/Difference-between-ZJU-SEL-and-NTT-implementations) if you are interested in digging more differences between ZJU-SEL and NTT implementations):
+##Technical Details
+Since ZJU-CST and NTT developed BOSH CloudStack CPI indecently at the beginning, there are many differences in the implementation. Hence, the first step is to merge code repositories of ZJU-CST and NTT into a new repository. We chose to create a new repository in github cloudfoundry-community in order to encourage more developers to join us.
+
+There are some crucial aspects in the process of refactoring CPI(check out the [wiki](https://github.com/cloudfoundry-community/bosh-cloudstack-cpi/wiki/Difference-between-ZJU-SEL-and-NTT-implementations) if you are interested in digging more differences between ZJU-CST and NTT implementations):
+
 * Stemcell Builder
 * Create Stemcell
 * Basic Zone VS Advanced Zone
