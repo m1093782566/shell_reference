@@ -10,12 +10,12 @@ This work is powered by NTT and ZJU-CST, we have been working together since las
 
 NTT, the world's leading telecom, has been active in fostering the Cloud Foundry developer and user community in Japan. NTT Laboratory has been contributing to Cloud Foundry for last two years and shareing their projects such as Memcashd Service, Nise BOSH, a lightweight BOSH emulator and BOSH Autoscaler with the community. NTT is running a public commercial PaaS `[Cloudn](http://www.ntt.com/cloudn_e/)` with Cloud Foundry since March 2013 and a video about their efforts on Cloud Foundry to build a commercial service with it is available at [the PlatformCF site](http://www.platformcf.com/)
 
-The decision to work together was motivated in part because ZJU-CST intended to upgrade the CPI  to support Cloud Foundry V2 and NTT wanted to improve their independently developed BOSH CloudStack CPI project so that can be compatible with CloudStack advanced zone.
+The decision to work together was motivated in part because ZJU-CST intended to upgrade their previously released CPI  to support Cloud Foundry V2 and NTT wanted to improve their independently developed BOSH CloudStack CPI project so that can be compatible with CloudStack advanced zone.
 
 Xiaohu Yang, Vice dean of College of Software Technology, Zhejiang University, thought highly of this international collaboration. "It will be a win-win cooperation, open source projects such as Cloud Foundry can serve as an international platform for education and researching".
 
 ##Technical Details
-Since NTT and ZJU-CST developed BOSH CloudStack CPI indecently at the beginning, there are many differences in the implementation. Hence, the first step is to merge code repositories of NTT and ZJU-CST into a new repository. We chose to create a new repository in github cloudfoundry-community in order to encourage more developers to join us.
+Since NTT and ZJU-CST developed BOSH CloudStack CPI independently at the beginning, there are many differences in the implementation. Hence, the first step is to merge code repositories of NTT and ZJU-CST into a new repository. We chose to create a new repository in github cloudfoundry-community in order to encourage more developers to join us.
 
 There are some crucial aspects in the process of refactoring CPI(check out the [wiki](https://github.com/cloudfoundry-community/bosh-cloudstack-cpi/wiki/Difference-between-ZJU-SEL-and-NTT-implementations) if you are interested in digging more differences between NTT and ZJU-CST implementations):
 
@@ -25,7 +25,7 @@ There are some crucial aspects in the process of refactoring CPI(check out the [
 * Fog Support
 
 ### Stemcell Builder
-ZJU-CST used standard Ubuntu10.04 ISO file to build stemcells for both MicroBOSH and BOSH. NTT used Ubuntu10.04 of a backported kernel version due to some compatible problems in their environment. Unfortunately, aufs, which is essential for warden in Cloud Foundry V2, is missing in the backported kernel. So, we decided to try standard Ubuntu12.04 as the base OS of stemcells for both MicroBOSH and BOSH after brainstorms. We found that, with a minor patch of cf-release, buntu12.04 is compatible with BOSH and Cloud Foundry. The patch only modifies the deployment process of Cloud Foundry, so it does not impact the Cloud Foundry platform itself.
+ZJU-CST used standard Ubuntu10.04 ISO file to build stemcells for both MicroBOSH and BOSH. NTT used Ubuntu10.04 of a backported kernel version due to some compatibility problems in their environment. Unfortunately, aufs, which is essential for warden in Cloud Foundry V2, is missing in the backported kernel. So, we decided to try standard Ubuntu12.04 as the base OS of stemcells for both MicroBOSH and BOSH after brainstorms. We found that, with a minor patch of cf-release, ubuntu12.04 is compatible with BOSH and Cloud Foundry. The patch only modifies the deployment process of Cloud Foundry, so it does not impact Cloud Foundry itself.
 
 ### Upload Stemcell
 When referring to API call create_stemcell in CPI, ZJU-CST used an extra web server as a entrepot when uploading stemcells, which follows the OpenStack style, but NTT didn't used an extra web server and took the volume route same as AWS pattern.
@@ -52,7 +52,7 @@ Both implementations have cons and pros.
 
 [B] an inception server is always required, however users don't have to setup a web server.
 
-After a heated discussion in the open source community, we adopted approach B as the current solution for uploading stemcells to bosh director due to approach A is not user-friendly. Meanwhile, we created a new branch for experiment with approach.
+After a heated discussion in the open source community, we adopted approach B as the default solution for uploading stemcells to bosh director due to approach A is not user-friendly. Meanwhile, we created a new branch for experiment with approach A.
 
 ### Basic Zone VS Advanced Zone
 
@@ -103,7 +103,7 @@ In fact, the remaining steps are very straightforward and similar with other dep
 
 ## Facts and Lessons Learned
 
-This is a successful international collaboration which benefits both NTT and ZJU-CST a lot. ZJU-CST have learnt the strict work style and devoted work attitude from NTT and got a more robust BOSH which is compatible with Cloud Foundry V2. NTT appriciates ZJU-CST for their huge effort to build up a CPI runnable on various CloudStack environements. The most precious assets we get from this cooperation maybe the experience in how to perform international cooperation effectively and how to reach out to the community if help is needed.
+This is a successful international collaboration which benefits both NTT and ZJU-CST a lot. ZJU-CST have learnt the strict work style and devoted work attitude from NTT and released a more robust BOSH which is compatible with Cloud Foundry V2. NTT appriciates ZJU-CST for their huge effort to build up a CPI runnable on various CloudStack environements. The most precious assets we get from this cooperation maybe the experience in how to perform international cooperation effectively and how to reach out to the community if help is needed.
 
 ## Join Us
 
