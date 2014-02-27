@@ -25,7 +25,7 @@ There are some crucial aspects in the process of refactoring CPI(check out the [
 * Fog Support
 
 ### Stemcell Builder
-ZJU-CST used standard Ubuntu10.04 ISO file to build stemcells for both MicroBOSH and BOSH. NTT used Ubuntu10.04 of a backported kernel version due to some compatible problems in their environment. Unfortunately, aufs, which is essential for warden in Cloud Foundry V2, is missing in the backported kernel. So, we decided to try standard Ubuntu12.04 as the base OS of stemcells for both MicroBOSH and BOSH after brainstorms. We found that, with a minor patch of cf-release，Ubuntu12.04 is compatible with BOSH and Cloud Foundry. The patch only modifies the deployment process of Cloud Foundry, so it does not impact the Cloud Foundry platform itself.
+ZJU-CST used standard Ubuntu10.04 ISO file to build stemcells for both MicroBOSH and BOSH. NTT used Ubuntu10.04 of a backported kernel version due to some compatible problems in their environment. Unfortunately, aufs, which is essential for warden in Cloud Foundry V2, is missing in the backported kernel. So, we decided to try standard Ubuntu12.04 as the base OS of stemcells for both MicroBOSH and BOSH after brainstorms. We found that, with a minor patch of cf-release, Ubuntu12.04 is compatible with BOSH and Cloud Foundry. The patch only modifies the deployment process of Cloud Foundry, so it does not impact the Cloud Foundry platform itself.
 
 ### Upload Stemcell
 When referring to API call create_stemcell in CPI, ZJU-CST used an extra web server as a entrepot when uploading stemcells, which follows the OpenStack style, but NTT didn’t used an extra web server and took the volume route same as AWS pattern.
