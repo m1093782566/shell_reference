@@ -12,7 +12,7 @@ NTT, the world's leading telecom, has been active in fostering the Cloud Foundry
 
 The decision to work together was motivated in part because ZJU-CST intended to upgrade their previously released CPI  to support Cloud Foundry V2 and NTT wanted to improve their independently developed BOSH CloudStack CPI project so that can be compatible with CloudStack advanced zone.
 
-Xiaohu Yang, Vice dean of College of Software Technology, Zhejiang University, thought highly of this international collaboration. "It will be a win-win cooperation, open source projects such as Cloud Foundry can serve as an international platform for education and researching".
+Xiaohu Yang, Executive Vice dean of College of Software Technology, Zhejiang University, thought highly of this international collaboration. "It will be a win-win cooperation. Open source projects such as Cloud Foundry can serve as an international platform for education and researching".
 
 ##Technical Details
 Since NTT and ZJU-CST developed BOSH CloudStack CPI independently at the beginning, there are many differences in the implementation. Hence, the first step is to merge code repositories of NTT and ZJU-CST into a new repository. We chose to create a new repository in github cloudfoundry-community in order to encourage more developers to join us.
