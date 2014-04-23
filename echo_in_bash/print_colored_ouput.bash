@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #Color codes are used to represent each color. For example, reset=0, black=30, red=31, green=32, yellow=33, blue=34, magenta=35, cyan=36, and white=37.
 #In order to print colored text, enter the following:
 echo -e "\e[1;31m This is red text \e[0m"
