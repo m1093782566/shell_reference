@@ -1,6 +1,0 @@
-#If you have installed ruby and forget to install zlib, use this patch file
-sudo apt-get install zlib1g-dev
-cd /ruby-source-files/ext/zlib
-ruby extconf.rb
-make
-sudo make install
